@@ -5,13 +5,17 @@
   "main": "src/cli.ts",
   "scripts": {
     "deskmate": "ts-node src/cli.ts",
+    "serve": "ts-node src/server.ts",
     "seed": "ts-node src/seed.ts",
-    "map": "ts-node src/map.ts"
+    "map": "ts-node src/map.ts",
+    "map-html": "ts-node src/map-html.ts"
   },
   "dependencies": {
-    "chalk": "^4.1.2"
+    "chalk": "^4.1.2",
+    "express": "^5.2.1"
   },
   "devDependencies": {
+    "@types/express": "^5.0.6",
     "@types/node": "^20.0.0",
     "ts-node": "^10.9.0",
     "typescript": "^5.0.0"

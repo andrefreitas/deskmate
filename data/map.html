@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deskmate — Cowork 4400</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f0f2f5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      color: #1a1a2e;
+    }
+
+    header p {
+      color: #666;
+      margin-top: 0.25rem;
+      font-size: 0.95rem;
+    }
+
+    .stats {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .stat {
+      background: white;
+      border-radius: 12px;
+      padding: 1rem 1.5rem;
+      text-align: center;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+      min-width: 100px;
+    }
+
+    .stat-value {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1a1a2e;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: #888;
+      margin-top: 0.2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(9, 120px);
+      grid-template-rows: repeat(3, 120px);
+      gap: 1rem;
+    }
+
+    .desk {
+      border-radius: 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem;
+      gap: 0.3rem;
+      cursor: default;
+      transition: transform 0.15s, box-shadow 0.15s;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .desk:hover:not(.empty) {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.14);
+    }
+
+    .desk.empty { background: transparent; box-shadow: none; }
+
+    .desk.free    { background: #d4edda; border: 2px solid #28a745; }
+    .desk.full    { background: #f8d7da; border: 2px solid #dc3545; }
+    .desk.am      { background: #fff3cd; border: 2px solid #ffc107; }
+    .desk.pm      { background: #fff3cd; border: 2px solid #ffc107; }
+    .desk.inactive{ background: #e9ecef; border: 2px solid #adb5bd; color: #adb5bd; }
+
+    .desk-id {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: inherit;
+      opacity: 0.6;
+    }
+
+    .desk-zone { font-size: 1.5rem; }
+
+    .desk-status {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #333;
+      text-align: center;
+    }
+
+    .desk.full .desk-status  { color: #842029; }
+    .desk.free .desk-status  { color: #155724; }
+    .desk.am .desk-status,
+    .desk.pm .desk-status    { color: #664d03; }
+
+    .company-badge {
+      font-size: 0.65rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #1a1a2e;
+      opacity: 0.5;
+    }
+
+    .sub-badge {
+      font-size: 0.62rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 1px 5px;
+      border-radius: 4px;
+      margin-top: 2px;
+    }
+
+    .sub-badge.monthly  { background: rgba(0,0,0,0.08); color: #555; }
+    .sub-badge.daypass  { background: #d0e8ff; color: #0057a8; border: 1px solid #90c4f5; }
+
+    .legend {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      color: #555;
+    }
+
+    .legend-item { display: flex; align-items: center; gap: 0.4rem; }
+
+    .dot {
+      width: 12px; height: 12px;
+      border-radius: 3px;
+      border: 2px solid;
+    }
+
+    .dot.free     { background: #d4edda; border-color: #28a745; }
+    .dot.full     { background: #f8d7da; border-color: #dc3545; }
+    .dot.half     { background: #fff3cd; border-color: #ffc107; }
+    .dot.inactive { background: #e9ecef; border-color: #adb5bd; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Cowork 4400</h1>
+    <p>2026-04-15</p>
+  </header>
+
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-value">8</div>
+      <div class="stat-label">Livres</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">18</div>
+      <div class="stat-label">Ocupadas</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">26</div>
+      <div class="stat-label">Total</div>
+    </div>
+  </div>
+
+  <div class="grid">
+    
+        <div class="desk inactive" title="D25 · direção">
+          <div class="desk-id">D25</div>
+          
+          <div class="desk-status">Direção</div>
+          
+        </div>
+        <div class="desk full" title="D20 · standard">
+          <div class="desk-id">D20</div>
+          
+          <div class="desk-status">David</div>
+          <div class="sub-badge monthly">Mensal</div>
+        </div>
+        <div class="desk full" title="D19 · standard">
+          <div class="desk-id">D19</div>
+          
+          <div class="desk-status">Valeria</div>
+          <div class="sub-badge monthly">Mensal</div>
+        </div>
+        <div class="desk full" title="D14 · standard">
+          <div class="desk-id">D14</div>
+          
+          <div class="desk-status">Bruno</div>
+          <div class="sub-badge monthly">Mensal</div>
+        </div>
+        <div class="desk full" title="D13 · standard">
+          <div class="desk-id">D13</div>
+          
+          <div class="desk-status">Mariana</div>
+          <div class="sub-badge monthly">Mensal</div>
+        </div>
+        <div class="desk full" title="D07 · central">
+          <div class="desk-id">D07</div>
+          
+          <div class="desk-status">Munique</div>
+          <div class="sub-badge monthly">Mensal</div>
+        </div>
+        <div class="desk full" title="D08 · central">
+          <div class="desk-id">D08</div>
+          
+          <div class="desk-status">Winnie</div>
+          <div class="sub-badge monthly">Mensal</div>
+        </div>
+        <div class="desk full" title="D02 · olisipo">
+          <div class="desk-id">D02</div>
+          <div class="company-badge">OLISIPO</div>
+          <div class="desk-status">Diogo</div>
+          <div class="sub-badge monthly">Mensal</div>
+        </div>
+        <div class="desk full" title="D01 · olisipo">
+          <div class="desk-id">D01</div>
+          <div class="company-badge">OLISIPO</div>
+          <div class="desk-status">Fabiana</div>
+          <div class="sub-badge monthly">Mensal</div>
+        </div>
+        <div class="desk full" title="D26 · standard">
+          <div class="desk-id">D26</div>
+          
+          <div class="desk-status">Daniel</div>
+          <div class="sub-badge monthly">Mensal</div>
+        </div>
+        <div class="desk full" title="D22 · standard">
+          <div class="desk-id">D22</div>
+          
+          <div class="desk-status">Pedro</div>
+          <div class="sub-badge monthly">Mensal</div>
+        </div>
+        <div class="desk full" title="D21 · standard">
+          <div class="desk-id">D21</div>
+          
+          <div class="desk-status">Rui</div>
+          <div class="sub-badge monthly">Mensal</div>
+        </div>
+        <div class="desk full" title="D16 · standard">
+          <div class="desk-id">D16</div>
+          
+          <div class="desk-status">Ivan</div>
+          <div class="sub-badge monthly">Mensal</div>
+        </div>
+        <div class="desk full" title="D15 · standard">
+          <div class="desk-id">D15</div>
+          
+          <div class="desk-status">Dominik</div>
+          <div class="sub-badge monthly">Mensal</div>
+        </div>
+        <div class="desk full" title="D10 · central">
+          <div class="desk-id">D10</div>
+          
+          <div class="desk-status">Lian</div>
+          <div class="sub-badge monthly">Mensal</div>
+        </div>
+        <div class="desk free" title="D09 · central">
+          <div class="desk-id">D09</div>
+          
+          <div class="desk-status">Livre</div>
+          
+        </div>
+        <div class="desk free" title="D04 · olisipo">
+          <div class="desk-id">D04</div>
+          
+          <div class="desk-status">Livre</div>
+          
+        </div>
+        <div class="desk full" title="D03 · olisipo">
+          <div class="desk-id">D03</div>
+          <div class="company-badge">OLISIPO</div>
+          <div class="desk-status">Joana</div>
+          <div class="sub-badge monthly">Mensal</div>
+        </div>
+        <div class="desk free" title="D27 · standard">
+          <div class="desk-id">D27</div>
+          
+          <div class="desk-status">Livre</div>
+          
+        </div>
+        <div class="desk free" title="D24 · standard">
+          <div class="desk-id">D24</div>
+          
+          <div class="desk-status">Livre</div>
+          
+        </div>
+        <div class="desk free" title="D23 · standard">
+          <div class="desk-id">D23</div>
+          
+          <div class="desk-status">Livre</div>
+          
+        </div>
+        <div class="desk free" title="D18 · standard">
+          <div class="desk-id">D18</div>
+          
+          <div class="desk-status">Livre</div>
+          
+        </div>
+        <div class="desk free" title="D17 · standard">
+          <div class="desk-id">D17</div>
+          
+          <div class="desk-status">Livre</div>
+          
+        </div>
+        <div class="desk full" title="D12 · central">
+          <div class="desk-id">D12</div>
+          
+          <div class="desk-status">Golan</div>
+          <div class="sub-badge monthly">Mensal</div>
+        </div>
+        <div class="desk full" title="D11 · central">
+          <div class="desk-id">D11</div>
+          
+          <div class="desk-status">Dan</div>
+          <div class="sub-badge monthly">Mensal</div>
+        </div>
+        <div class="desk full" title="D06 · olisipo">
+          <div class="desk-id">D06</div>
+          <div class="company-badge">OLISIPO</div>
+          <div class="desk-status">Claudia</div>
+          <div class="sub-badge monthly">Mensal</div>
+        </div>
+        <div class="desk free" title="D05 · olisipo">
+          <div class="desk-id">D05</div>
+          
+          <div class="desk-status">Livre</div>
+          
+        </div>
+  </div>
+
+  <div class="legend">
+    <div class="legend-item"><div class="dot free"></div> Livre</div>
+    <div class="legend-item"><div class="dot full"></div> Ocupada</div>
+    <div class="legend-item"><div class="dot half"></div> Meio-dia</div>
+    <div class="legend-item"><div class="dot inactive"></div> Inativa</div>
+  </div>
+</body>
+</html>

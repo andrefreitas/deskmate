@@ -5,7 +5,7 @@ const STATE_PATH = path.join(__dirname, "../data/state.json");
 const SPACE_PATH = path.join(__dirname, "../data/space.json");
 
 export type Slot = "full" | "am" | "pm";
-export type Zone = "quiet" | "collab" | "phone-ok";
+export type Zone = "quiet" | "collab" | "phone-ok" | "direção" | "olisipo" | "central" | "standard";
 
 export interface Desk {
   id: string;
@@ -13,12 +13,19 @@ export interface Desk {
   zone: Zone;
   features: string[];
   active: boolean;
+  company?: string;
 }
+
+export type SubscriptionType = "monthly" | "daypass";
 
 export interface Member {
   id: string;
   name: string;
   email: string;
+  subscriptionType: SubscriptionType;
+  subscriptionStart: string;   // YYYY-MM-DD
+  subscriptionEnd?: string;    // YYYY-MM-DD, optional
+  deskId?: string;             // permanent desk for monthly subscribers
   preferences: string[];
   createdAt: string;
 }

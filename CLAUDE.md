@@ -40,7 +40,8 @@ npm run deskmate -- suggest "Carla" 2026-04-16 am
 npm run deskmate -- members
 
 # Add a new member
-npm run deskmate -- add-member "João" joao@example.com quiet,monitor
+npm run deskmate -- add-member "João" monthly joao@example.com quiet,monitor
+npm run deskmate -- add-member "Maria" daypass maria@example.com
 ```
 
 ### Slots
@@ -67,3 +68,11 @@ npm run deskmate -- add-member "João" joao@example.com quiet,monitor
 npm install
 npm run seed   # create initial data (12 desks, 5 members)
 ```
+
+## Email
+
+Inbox para pedidos de day passes e subscrições mensais:
+- **Address:** deskmate@ai.andrefreitas.pt
+- **Inbox ID:** 3a2f5563-f876-4062-8b63-427c78688647
+- **CLI:** `openmail messages list --inbox-id 3a2f5563-f876-4062-8b63-427c78688647`
+- **Reply:** `openmail send --to <email> --subject <subject> --body <body> --thread-id <id>`

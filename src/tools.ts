@@ -1,7 +1,21 @@
-import { getState, saveState, Booking, Slot } from "./storage";
+import { getState, saveState, Booking, Slot, Member } from "./storage";
 
 function today(): string {
   return new Date().toISOString().slice(0, 10);
+}
+
+export function isSubscriptionActive(member: Member, date: string): boolean {
+  return date >= member.subscriptionStart && (!member.subscriptionEnd || date <= member.subscriptionEnd);
+}
+
+// Monthly subscribers with an active subscription on a given date, keyed by deskId
+export function getMonthlyOccupancy(date: string): Map<string, Member> {
+  const state = getState();
+  return new Map(
+    state.members
+      .filter((m) => m.subscriptionType === "monthly" && m.deskId && isSubscriptionActive(m, date))
+      .map((m) => [m.deskId!, m])
+  );
 }
 
 function newId(prefix: string, existing: { id: string }[]): string {
@@ -20,6 +34,7 @@ export function list_desks({ date }: { date?: string }) {
   const activeBookings = state.bookings.filter(
     (b) => b.date === d && !b.cancelledAt
   );
+  const monthlyOccupancy = getMonthlyOccupancy(d);
 
   return state.desks
     .filter((desk) => desk.active)
@@ -30,17 +45,20 @@ export function list_desks({ date }: { date?: string }) {
         bookedSlots.includes("full") ||
         (bookedSlots.includes("am") && bookedSlots.includes("pm"));
 
+      // Check explicit bookings first, then monthly subscriptions
       const member = bookings.length
         ? state.members.find((m) => m.id === bookings[0].memberId)
-        : null;
+        : monthlyOccupancy.get(desk.id) ?? null;
+
+      const occupiedByMonthly = !isFull && !bookings.length && monthlyOccupancy.has(desk.id);
 
       return {
         id: desk.id,
         label: desk.label,
         zone: desk.zone,
         features: desk.features,
-        available: !isFull,
-        bookedSlots,
+        available: !isFull && !occupiedByMonthly,
+        bookedSlots: occupiedByMonthly ? ["full"] : bookedSlots,
         bookedBy: member?.name ?? null,
       };
     });
@@ -242,10 +260,16 @@ export function suggest_desk({
 export function add_member({
   name,
   email,
+  subscriptionType,
+  subscriptionStart,
+  subscriptionEnd,
   preferences,
 }: {
   name: string;
   email?: string;
+  subscriptionType?: "monthly" | "daypass";
+  subscriptionStart?: string;
+  subscriptionEnd?: string;
   preferences?: string[];
 }) {
   const state = getState();
@@ -254,12 +278,16 @@ export function add_member({
   );
   if (existing) return { error: `Member "${name}" already exists (${existing.id}).` };
 
-  const member = {
+  const today = new Date().toISOString().slice(0, 10);
+  const member: import("./storage").Member = {
     id: newId("M", state.members),
     name,
     email: email ?? "",
+    subscriptionType: subscriptionType ?? "monthly",
+    subscriptionStart: subscriptionStart ?? today,
+    ...(subscriptionEnd ? { subscriptionEnd } : {}),
     preferences: preferences ?? [],
-    createdAt: new Date().toISOString().slice(0, 10),
+    createdAt: today,
   };
 
   state.members.push(member);

@@ -106,14 +106,16 @@ switch (command) {
     break;
   }
 
-  // ── add-member <name> [email] [pref1,pref2,...] ─────────────────────────────
+  // ── add-member <name> <monthly|daypass> [email] [pref1,pref2,...] ───────────
   case "add-member": {
-    const [name, email, prefsStr] = args;
-    if (!name) fail("Usage: add-member <name> [email] [pref1,pref2,...]");
+    const [name, subscriptionType, email, prefsStr] = args;
+    if (!name || !subscriptionType) fail("Usage: add-member <name> <monthly|daypass> [email] [prefs]");
+    if (subscriptionType !== "monthly" && subscriptionType !== "daypass") fail("subscriptionType must be 'monthly' or 'daypass'");
 
     out(add_member({
       name,
       email,
+      subscriptionType: subscriptionType as "monthly" | "daypass",
       preferences: prefsStr ? prefsStr.split(",") : [],
     }));
     break;
@@ -131,7 +133,7 @@ Deskmate CLI
   bookings [member] [start] [end]     List bookings
   suggest <member> [date] [slot]      Suggest best desk for member
   members                             List all members
-  add-member <name> [email] [prefs]   Add a new member (prefs: quiet,monitor,...)
+  add-member <name> <monthly|daypass> [email] [prefs]   Add a new member
 
 Dates: YYYY-MM-DD   Member: name (partial) or ID like M01
 `);

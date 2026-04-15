@@ -4,156 +4,413 @@
     {
       "id": "D01",
       "label": "Desk 1",
-      "zone": "quiet",
-      "features": [
-        "monitor"
-      ],
-      "active": true
+      "zone": "olisipo",
+      "features": [],
+      "active": true,
+      "company": "OLISIPO"
     },
     {
       "id": "D02",
       "label": "Desk 2",
-      "zone": "quiet",
-      "features": [
-        "monitor",
-        "standing"
-      ],
-      "active": true
+      "zone": "olisipo",
+      "features": [],
+      "active": true,
+      "company": "OLISIPO"
     },
     {
       "id": "D03",
       "label": "Desk 3",
-      "zone": "collab",
+      "zone": "olisipo",
       "features": [],
-      "active": true
+      "active": true,
+      "company": "OLISIPO"
     },
     {
       "id": "D04",
       "label": "Desk 4",
-      "zone": "collab",
-      "features": [
-        "monitor"
-      ],
+      "zone": "olisipo",
+      "features": [],
       "active": true
     },
     {
       "id": "D05",
       "label": "Desk 5",
-      "zone": "quiet",
-      "features": [
-        "near-window"
-      ],
+      "zone": "olisipo",
+      "features": [],
       "active": true
     },
     {
       "id": "D06",
       "label": "Desk 6",
-      "zone": "phone-ok",
-      "features": [
-        "monitor",
-        "near-window"
-      ],
-      "active": true
+      "zone": "olisipo",
+      "features": [],
+      "active": true,
+      "company": "OLISIPO"
     },
     {
       "id": "D07",
       "label": "Desk 7",
-      "zone": "phone-ok",
+      "zone": "central",
       "features": [],
       "active": true
     },
     {
       "id": "D08",
       "label": "Desk 8",
-      "zone": "collab",
-      "features": [
-        "standing"
-      ],
+      "zone": "central",
+      "features": [],
       "active": true
     },
     {
       "id": "D09",
       "label": "Desk 9",
-      "zone": "quiet",
-      "features": [
-        "monitor"
-      ],
+      "zone": "central",
+      "features": [],
       "active": true
     },
     {
       "id": "D10",
       "label": "Desk 10",
-      "zone": "quiet",
+      "zone": "central",
       "features": [],
       "active": true
     },
     {
       "id": "D11",
       "label": "Desk 11",
-      "zone": "collab",
-      "features": [
-        "monitor"
-      ],
+      "zone": "central",
+      "features": [],
       "active": true
     },
     {
       "id": "D12",
       "label": "Desk 12",
-      "zone": "phone-ok",
-      "features": [
-        "standing",
-        "monitor"
-      ],
+      "zone": "central",
+      "features": [],
+      "active": true
+    },
+    {
+      "id": "D13",
+      "label": "Desk 13",
+      "zone": "standard",
+      "features": [],
+      "active": true
+    },
+    {
+      "id": "D14",
+      "label": "Desk 14",
+      "zone": "standard",
+      "features": [],
+      "active": true
+    },
+    {
+      "id": "D15",
+      "label": "Desk 15",
+      "zone": "standard",
+      "features": [],
+      "active": true
+    },
+    {
+      "id": "D16",
+      "label": "Desk 16",
+      "zone": "standard",
+      "features": [],
+      "active": true
+    },
+    {
+      "id": "D17",
+      "label": "Desk 17",
+      "zone": "standard",
+      "features": [],
+      "active": true
+    },
+    {
+      "id": "D18",
+      "label": "Desk 18",
+      "zone": "standard",
+      "features": [],
+      "active": true
+    },
+    {
+      "id": "D19",
+      "label": "Desk 19",
+      "zone": "standard",
+      "features": [],
+      "active": true
+    },
+    {
+      "id": "D20",
+      "label": "Desk 20",
+      "zone": "standard",
+      "features": [],
+      "active": true
+    },
+    {
+      "id": "D21",
+      "label": "Desk 21",
+      "zone": "standard",
+      "features": [],
+      "active": true
+    },
+    {
+      "id": "D22",
+      "label": "Desk 22",
+      "zone": "standard",
+      "features": [],
+      "active": true
+    },
+    {
+      "id": "D23",
+      "label": "Desk 23",
+      "zone": "standard",
+      "features": [],
+      "active": true
+    },
+    {
+      "id": "D24",
+      "label": "Desk 24",
+      "zone": "standard",
+      "features": [],
+      "active": true
+    },
+    {
+      "id": "D25",
+      "label": "Direção",
+      "zone": "direção",
+      "features": [],
+      "active": false
+    },
+    {
+      "id": "D26",
+      "label": "Desk 26",
+      "zone": "standard",
+      "features": [],
+      "active": true
+    },
+    {
+      "id": "D27",
+      "label": "Desk 27",
+      "zone": "standard",
+      "features": [],
       "active": true
     }
   ],
   "members": [
     {
       "id": "M01",
-      "name": "Ana Silva",
-      "email": "ana@example.com",
-      "preferences": [
-        "quiet",
-        "monitor"
-      ],
+      "name": "Fabiana",
+      "email": "",
+      "subscriptionType": "monthly",
+      "subscriptionStart": "2026-01-01",
+      "deskId": "D01",
+      "preferences": [],
       "createdAt": "2026-04-15"
     },
     {
       "id": "M02",
-      "name": "Bob Costa",
-      "email": "bob@example.com",
-      "preferences": [
-        "collab"
-      ],
-      "createdAt": "2026-04-15"
+      "name": "Diogo",
+      "email": "",
+      "subscriptionType": "monthly",
+      "subscriptionStart": "2026-01-01",
+      "deskId": "D02",
+      "preferences": [],
+      "createdAt": "2026-04-15",
+      "subscriptionEnd": "2026-06-30"
     },
     {
       "id": "M03",
-      "name": "Carla Nunes",
-      "email": "carla@example.com",
-      "preferences": [
-        "standing",
-        "near-window"
-      ],
-      "createdAt": "2026-04-15"
+      "name": "Joana",
+      "email": "",
+      "subscriptionType": "monthly",
+      "subscriptionStart": "2026-01-01",
+      "deskId": "D03",
+      "preferences": [],
+      "createdAt": "2026-04-15",
+      "subscriptionEnd": "2026-05-01"
     },
     {
       "id": "M04",
-      "name": "David Lopes",
-      "email": "david@example.com",
-      "preferences": [
-        "phone-ok"
-      ],
-      "createdAt": "2026-04-15"
+      "name": "Claudia",
+      "email": "",
+      "subscriptionType": "monthly",
+      "subscriptionStart": "2026-01-01",
+      "deskId": "D06",
+      "preferences": [],
+      "createdAt": "2026-04-15",
+      "subscriptionEnd": "2026-03-31"
     },
     {
       "id": "M05",
-      "name": "Eva Moura",
-      "email": "eva@example.com",
-      "preferences": [
-        "quiet",
-        "near-window"
-      ],
+      "name": "Munique",
+      "email": "",
+      "subscriptionType": "monthly",
+      "subscriptionStart": "2026-01-01",
+      "deskId": "D07",
+      "preferences": [],
+      "createdAt": "2026-04-15"
+    },
+    {
+      "id": "M06",
+      "name": "Winnie",
+      "email": "",
+      "subscriptionType": "monthly",
+      "subscriptionStart": "2026-01-01",
+      "deskId": "D08",
+      "preferences": [],
+      "createdAt": "2026-04-15"
+    },
+    {
+      "id": "M07",
+      "name": "Lian",
+      "email": "",
+      "subscriptionType": "monthly",
+      "subscriptionStart": "2026-01-01",
+      "deskId": "D10",
+      "preferences": [],
+      "createdAt": "2026-04-15"
+    },
+    {
+      "id": "M08",
+      "name": "Dan Philips",
+      "email": "",
+      "subscriptionType": "monthly",
+      "subscriptionStart": "2026-01-01",
+      "deskId": "D11",
+      "preferences": [],
+      "createdAt": "2026-04-15"
+    },
+    {
+      "id": "M09",
+      "name": "Golan",
+      "email": "",
+      "subscriptionType": "monthly",
+      "subscriptionStart": "2026-01-01",
+      "deskId": "D12",
+      "preferences": [],
+      "createdAt": "2026-04-15"
+    },
+    {
+      "id": "M10",
+      "name": "Mariana",
+      "email": "",
+      "subscriptionType": "monthly",
+      "subscriptionStart": "2026-01-01",
+      "deskId": "D13",
+      "preferences": [],
+      "createdAt": "2026-04-15"
+    },
+    {
+      "id": "M11",
+      "name": "Bruno",
+      "email": "",
+      "subscriptionType": "monthly",
+      "subscriptionStart": "2026-01-01",
+      "deskId": "D14",
+      "preferences": [],
+      "createdAt": "2026-04-15"
+    },
+    {
+      "id": "M12",
+      "name": "Dominik",
+      "email": "",
+      "subscriptionType": "monthly",
+      "subscriptionStart": "2026-01-01",
+      "deskId": "D15",
+      "preferences": [],
+      "createdAt": "2026-04-15"
+    },
+    {
+      "id": "M13",
+      "name": "Ivan",
+      "email": "",
+      "subscriptionType": "monthly",
+      "subscriptionStart": "2026-01-01",
+      "deskId": "D16",
+      "preferences": [],
+      "createdAt": "2026-04-15"
+    },
+    {
+      "id": "M14",
+      "name": "Valeria Yulia",
+      "email": "",
+      "subscriptionType": "monthly",
+      "subscriptionStart": "2026-01-01",
+      "deskId": "D19",
+      "preferences": [],
+      "createdAt": "2026-04-15"
+    },
+    {
+      "id": "M15",
+      "name": "David",
+      "email": "",
+      "subscriptionType": "monthly",
+      "subscriptionStart": "2026-01-01",
+      "deskId": "D20",
+      "preferences": [],
+      "createdAt": "2026-04-15"
+    },
+    {
+      "id": "M16",
+      "name": "Rui Silva",
+      "email": "",
+      "subscriptionType": "monthly",
+      "subscriptionStart": "2026-01-01",
+      "deskId": "D21",
+      "preferences": [],
+      "createdAt": "2026-04-15"
+    },
+    {
+      "id": "M17",
+      "name": "Pedro Monteiro",
+      "email": "",
+      "subscriptionType": "monthly",
+      "subscriptionStart": "2026-01-01",
+      "deskId": "D22",
+      "preferences": [],
+      "createdAt": "2026-04-15"
+    },
+    {
+      "id": "M18",
+      "name": "Daniel",
+      "email": "",
+      "subscriptionType": "monthly",
+      "subscriptionStart": "2026-01-01",
+      "deskId": "D26",
+      "preferences": [],
+      "createdAt": "2026-04-15"
+    },
+    {
+      "id": "M19",
+      "name": "Willy",
+      "email": "",
+      "subscriptionType": "monthly",
+      "subscriptionStart": "2026-01-01",
+      "preferences": [],
+      "createdAt": "2026-04-15"
+    },
+    {
+      "id": "M020",
+      "name": "André Freitas",
+      "email": "p.andrefreitas@gmail.com",
+      "subscriptionType": "daypass",
+      "preferences": [],
+      "createdAt": "2026-04-15"
+    },
+    {
+      "id": "M021",
+      "name": "Sofia Melo",
+      "email": "sofia@example.com",
+      "subscriptionType": "daypass",
+      "preferences": [],
+      "createdAt": "2026-04-15"
+    },
+    {
+      "id": "M022",
+      "name": "Afonso Monteiro",
+      "email": "afonso@subvisual.co",
+      "subscriptionType": "daypass",
+      "subscriptionStart": "2026-04-15",
+      "preferences": [],
       "createdAt": "2026-04-15"
     }
   ],
@@ -169,7 +426,7 @@
     },
     {
       "id": "B002",
-      "deskId": "D03",
+      "deskId": "D02",
       "memberId": "M02",
       "date": "2026-04-15",
       "slot": "full",
@@ -178,29 +435,200 @@
     },
     {
       "id": "B003",
-      "deskId": "D06",
-      "memberId": "M04",
+      "deskId": "D03",
+      "memberId": "M03",
       "date": "2026-04-15",
-      "slot": "am",
+      "slot": "full",
       "createdAt": "2026-04-15",
       "cancelledAt": null
     },
     {
       "id": "B004",
-      "deskId": "D09",
-      "memberId": "M03",
-      "date": "2026-04-16",
+      "deskId": "D06",
+      "memberId": "M04",
+      "date": "2026-04-15",
       "slot": "full",
       "createdAt": "2026-04-15",
       "cancelledAt": null
     },
     {
       "id": "B005",
-      "deskId": "D02",
+      "deskId": "D07",
       "memberId": "M05",
       "date": "2026-04-15",
       "slot": "full",
-      "createdAt": "2026-04-15T10:37:44.322Z",
+      "createdAt": "2026-04-15",
+      "cancelledAt": null
+    },
+    {
+      "id": "B006",
+      "deskId": "D08",
+      "memberId": "M06",
+      "date": "2026-04-15",
+      "slot": "full",
+      "createdAt": "2026-04-15",
+      "cancelledAt": null
+    },
+    {
+      "id": "B007",
+      "deskId": "D10",
+      "memberId": "M07",
+      "date": "2026-04-15",
+      "slot": "full",
+      "createdAt": "2026-04-15",
+      "cancelledAt": null
+    },
+    {
+      "id": "B008",
+      "deskId": "D11",
+      "memberId": "M08",
+      "date": "2026-04-15",
+      "slot": "full",
+      "createdAt": "2026-04-15",
+      "cancelledAt": null
+    },
+    {
+      "id": "B009",
+      "deskId": "D12",
+      "memberId": "M09",
+      "date": "2026-04-15",
+      "slot": "full",
+      "createdAt": "2026-04-15",
+      "cancelledAt": null
+    },
+    {
+      "id": "B010",
+      "deskId": "D13",
+      "memberId": "M10",
+      "date": "2026-04-15",
+      "slot": "full",
+      "createdAt": "2026-04-15",
+      "cancelledAt": null
+    },
+    {
+      "id": "B011",
+      "deskId": "D14",
+      "memberId": "M11",
+      "date": "2026-04-15",
+      "slot": "full",
+      "createdAt": "2026-04-15",
+      "cancelledAt": null
+    },
+    {
+      "id": "B012",
+      "deskId": "D15",
+      "memberId": "M12",
+      "date": "2026-04-15",
+      "slot": "full",
+      "createdAt": "2026-04-15",
+      "cancelledAt": null
+    },
+    {
+      "id": "B013",
+      "deskId": "D16",
+      "memberId": "M13",
+      "date": "2026-04-15",
+      "slot": "full",
+      "createdAt": "2026-04-15",
+      "cancelledAt": null
+    },
+    {
+      "id": "B014",
+      "deskId": "D19",
+      "memberId": "M14",
+      "date": "2026-04-15",
+      "slot": "full",
+      "createdAt": "2026-04-15",
+      "cancelledAt": null
+    },
+    {
+      "id": "B015",
+      "deskId": "D20",
+      "memberId": "M15",
+      "date": "2026-04-15",
+      "slot": "full",
+      "createdAt": "2026-04-15",
+      "cancelledAt": null
+    },
+    {
+      "id": "B016",
+      "deskId": "D21",
+      "memberId": "M16",
+      "date": "2026-04-15",
+      "slot": "full",
+      "createdAt": "2026-04-15",
+      "cancelledAt": null
+    },
+    {
+      "id": "B017",
+      "deskId": "D22",
+      "memberId": "M17",
+      "date": "2026-04-15",
+      "slot": "full",
+      "createdAt": "2026-04-15",
+      "cancelledAt": null
+    },
+    {
+      "id": "B018",
+      "deskId": "D26",
+      "memberId": "M18",
+      "date": "2026-04-15",
+      "slot": "full",
+      "createdAt": "2026-04-15",
+      "cancelledAt": null
+    },
+    {
+      "id": "B019",
+      "deskId": "D04",
+      "memberId": "M020",
+      "date": "2026-04-17",
+      "slot": "am",
+      "createdAt": "2026-04-15T14:12:02.674Z",
+      "cancelledAt": null
+    },
+    {
+      "id": "B020",
+      "deskId": "D04",
+      "memberId": "M020",
+      "date": "2026-04-20",
+      "slot": "pm",
+      "createdAt": "2026-04-15T14:12:03.149Z",
+      "cancelledAt": null
+    },
+    {
+      "id": "B021",
+      "deskId": "D04",
+      "memberId": "M020",
+      "date": "2026-04-21",
+      "slot": "full",
+      "createdAt": "2026-04-15T14:12:03.614Z",
+      "cancelledAt": null
+    },
+    {
+      "id": "B022",
+      "deskId": "D09",
+      "memberId": "M020",
+      "date": "2026-04-15",
+      "slot": "am",
+      "createdAt": "2026-04-15",
+      "cancelledAt": null
+    },
+    {
+      "id": "B023",
+      "deskId": "D09",
+      "memberId": "M021",
+      "date": "2026-04-15",
+      "slot": "pm",
+      "createdAt": "2026-04-15",
+      "cancelledAt": null
+    },
+    {
+      "id": "B024",
+      "deskId": "D05",
+      "memberId": "M022",
+      "date": "2026-04-17",
+      "slot": "full",
+      "createdAt": "2026-04-15T14:21:56.120Z",
       "cancelledAt": null
     }
   ]
