@@ -1,0 +1,198 @@
+{
+  "version": 1,
+  "desks": [
+    {
+      "id": "D01",
+      "label": "Desk 1",
+      "zone": "quiet",
+      "features": [
+        "monitor"
+      ],
+      "active": true
+    },
+    {
+      "id": "D02",
+      "label": "Desk 2",
+      "zone": "quiet",
+      "features": [
+        "monitor",
+        "standing"
+      ],
+      "active": true
+    },
+    {
+      "id": "D03",
+      "label": "Desk 3",
+      "zone": "collab",
+      "features": [],
+      "active": true
+    },
+    {
+      "id": "D04",
+      "label": "Desk 4",
+      "zone": "collab",
+      "features": [
+        "monitor"
+      ],
+      "active": true
+    },
+    {
+      "id": "D05",
+      "label": "Desk 5",
+      "zone": "quiet",
+      "features": [
+        "near-window"
+      ],
+      "active": true
+    },
+    {
+      "id": "D06",
+      "label": "Desk 6",
+      "zone": "phone-ok",
+      "features": [
+        "monitor",
+        "near-window"
+      ],
+      "active": true
+    },
+    {
+      "id": "D07",
+      "label": "Desk 7",
+      "zone": "phone-ok",
+      "features": [],
+      "active": true
+    },
+    {
+      "id": "D08",
+      "label": "Desk 8",
+      "zone": "collab",
+      "features": [
+        "standing"
+      ],
+      "active": true
+    },
+    {
+      "id": "D09",
+      "label": "Desk 9",
+      "zone": "quiet",
+      "features": [
+        "monitor"
+      ],
+      "active": true
+    },
+    {
+      "id": "D10",
+      "label": "Desk 10",
+      "zone": "quiet",
+      "features": [],
+      "active": true
+    },
+    {
+      "id": "D11",
+      "label": "Desk 11",
+      "zone": "collab",
+      "features": [
+        "monitor"
+      ],
+      "active": true
+    },
+    {
+      "id": "D12",
+      "label": "Desk 12",
+      "zone": "phone-ok",
+      "features": [
+        "standing",
+        "monitor"
+      ],
+      "active": true
+    }
+  ],
+  "members": [
+    {
+      "id": "M01",
+      "name": "Ana Silva",
+      "email": "ana@example.com",
+      "preferences": [
+        "quiet",
+        "monitor"
+      ],
+      "createdAt": "2026-04-15"
+    },
+    {
+      "id": "M02",
+      "name": "Bob Costa",
+      "email": "bob@example.com",
+      "preferences": [
+        "collab"
+      ],
+      "createdAt": "2026-04-15"
+    },
+    {
+      "id": "M03",
+      "name": "Carla Nunes",
+      "email": "carla@example.com",
+      "preferences": [
+        "standing",
+        "near-window"
+      ],
+      "createdAt": "2026-04-15"
+    },
+    {
+      "id": "M04",
+      "name": "David Lopes",
+      "email": "david@example.com",
+      "preferences": [
+        "phone-ok"
+      ],
+      "createdAt": "2026-04-15"
+    },
+    {
+      "id": "M05",
+      "name": "Eva Moura",
+      "email": "eva@example.com",
+      "preferences": [
+        "quiet",
+        "near-window"
+      ],
+      "createdAt": "2026-04-15"
+    }
+  ],
+  "bookings": [
+    {
+      "id": "B001",
+      "deskId": "D01",
+      "memberId": "M01",
+      "date": "2026-04-15",
+      "slot": "full",
+      "createdAt": "2026-04-15",
+      "cancelledAt": null
+    },
+    {
+      "id": "B002",
+      "deskId": "D03",
+      "memberId": "M02",
+      "date": "2026-04-15",
+      "slot": "full",
+      "createdAt": "2026-04-15",
+      "cancelledAt": null
+    },
+    {
+      "id": "B003",
+      "deskId": "D06",
+      "memberId": "M04",
+      "date": "2026-04-15",
+      "slot": "am",
+      "createdAt": "2026-04-15",
+      "cancelledAt": null
+    },
+    {
+      "id": "B004",
+      "deskId": "D09",
+      "memberId": "M03",
+      "date": "2026-04-16",
+      "slot": "full",
+      "createdAt": "2026-04-15",
+      "cancelledAt": null
+    }
+  ]
+}

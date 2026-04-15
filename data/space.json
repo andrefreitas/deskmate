@@ -1,0 +1,67 @@
+{
+  "name": "Deskmate HQ",
+  "rows": 3,
+  "cols": 4,
+  "grid": [
+    {
+      "row": 0,
+      "col": 0,
+      "deskId": "D01"
+    },
+    {
+      "row": 0,
+      "col": 1,
+      "deskId": "D02"
+    },
+    {
+      "row": 0,
+      "col": 2,
+      "deskId": "D03"
+    },
+    {
+      "row": 0,
+      "col": 3,
+      "deskId": "D04"
+    },
+    {
+      "row": 1,
+      "col": 0,
+      "deskId": "D05"
+    },
+    {
+      "row": 1,
+      "col": 1,
+      "deskId": "D06"
+    },
+    {
+      "row": 1,
+      "col": 2,
+      "deskId": "D07"
+    },
+    {
+      "row": 1,
+      "col": 3,
+      "deskId": "D08"
+    },
+    {
+      "row": 2,
+      "col": 0,
+      "deskId": "D09"
+    },
+    {
+      "row": 2,
+      "col": 1,
+      "deskId": "D10"
+    },
+    {
+      "row": 2,
+      "col": 2,
+      "deskId": "D11"
+    },
+    {
+      "row": 2,
+      "col": 3,
+      "deskId": "D12"
+    }
+  ]
+}
