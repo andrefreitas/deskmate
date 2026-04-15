@@ -193,6 +193,15 @@
       "slot": "full",
       "createdAt": "2026-04-15",
       "cancelledAt": null
+    },
+    {
+      "id": "B005",
+      "deskId": "D02",
+      "memberId": "M05",
+      "date": "2026-04-15",
+      "slot": "full",
+      "createdAt": "2026-04-15T10:37:44.322Z",
+      "cancelledAt": null
     }
   ]
 }

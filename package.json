@@ -2,16 +2,14 @@
   "name": "deskmate",
   "version": "0.1.0",
   "description": "AI agent for coworking space desk allocation",
-  "main": "src/index.ts",
+  "main": "src/cli.ts",
   "scripts": {
-    "start": "ts-node src/index.ts",
+    "deskmate": "ts-node src/cli.ts",
     "seed": "ts-node src/seed.ts",
     "map": "ts-node src/map.ts"
   },
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.39.0",
-    "chalk": "^4.1.2",
-    "dotenv": "^16.0.0"
+    "chalk": "^4.1.2"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
